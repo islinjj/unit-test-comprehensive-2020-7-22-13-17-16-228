@@ -13,7 +13,8 @@ public class GuessGame {
     public String play(int[] inputNumber) {
         if (Arrays.equals(inputNumber,answer)){
             return "4A0B";
+        } else {
+            return "0A0B";
         }
-        return null;
     }
 }
