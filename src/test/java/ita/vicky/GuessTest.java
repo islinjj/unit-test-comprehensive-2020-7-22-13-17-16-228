@@ -129,4 +129,17 @@ public class GuessTest {
         //then
         Assertions.assertEquals("0A4B",result);
     }
+
+    public void should_return_wrong_answer_when_generate_given_22(){
+        //given
+        GenerateAnswer generateAnswer = Mockito.mock(GenerateAnswer.class);
+        int[] answer = {2,2};
+        when(generateAnswer.generate()).thenReturn(answer);
+        GuessGame guessGame = new GuessGame(generateAnswer.generate());
+
+        //when
+
+        //then
+//        Assertions.assertEquals("Wrong answer");
+    }
 }
