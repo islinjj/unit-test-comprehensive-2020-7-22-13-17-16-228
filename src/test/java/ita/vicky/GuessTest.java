@@ -18,4 +18,18 @@ public class GuessTest {
         //then
         Assertions.assertEquals("4A0B",result);
     }
+
+    @Test
+    public void should_return_0A0B_when_guess_given_5678() {
+        //given
+        int[] inputNumber = {5,6,7,8};
+        int[] answer = {1,2,3,4};
+        GuessGame guessGame = new GuessGame(answer);
+
+        //when
+        String result = guessGame.play(inputNumber);
+
+        //then
+        Assertions.assertEquals("0A0B",result);
+    }
 }
