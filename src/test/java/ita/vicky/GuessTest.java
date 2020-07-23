@@ -2,14 +2,19 @@ package ita.vicky;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
+
+import static org.mockito.Mockito.when;
 
 public class GuessTest {
 
     @Test
     public void should_return_4A0B_when_guess_given_1234() {
         //given
+        GenerateAnswer generateAnswer = Mockito.mock(GenerateAnswer.class);
         int[] answer = {1,2,3,4};
-        GuessGame guessGame = new GuessGame(answer);
+        when(generateAnswer.generate()).thenReturn(answer);
+        GuessGame guessGame = new GuessGame(generateAnswer.generate());
         int[] inputNumber = {1,2,3,4};
 
         //when
@@ -23,8 +28,10 @@ public class GuessTest {
     public void should_return_0A0B_when_guess_given_5678() {
         //given
         int[] inputNumber = {5,6,7,8};
+        GenerateAnswer generateAnswer = Mockito.mock(GenerateAnswer.class);
         int[] answer = {1,2,3,4};
-        GuessGame guessGame = new GuessGame(answer);
+        when(generateAnswer.generate()).thenReturn(answer);
+        GuessGame guessGame = new GuessGame(generateAnswer.generate());
 
         //when
         String result = guessGame.play(inputNumber);
@@ -36,9 +43,11 @@ public class GuessTest {
     @Test
     public void should_return_1A0B_when_guess_given_1567() {
         //given
-        int[] answer = {1,2,3,4};
         int[] inputNumber = {1,5,6,7};
-        GuessGame guessGame = new GuessGame(answer);
+        GenerateAnswer generateAnswer = Mockito.mock(GenerateAnswer.class);
+        int[] answer = {1,2,3,4};
+        when(generateAnswer.generate()).thenReturn(answer);
+        GuessGame guessGame = new GuessGame(generateAnswer.generate());
 
         //when
         String result = guessGame.play(inputNumber);
@@ -50,9 +59,11 @@ public class GuessTest {
     @Test
     public void should_return_0A2B_when_guess_given_2478() {
         //given
-        int[] answer = {1,2,3,4};
         int[] inputNumber = {2,4,7,8};
-        GuessGame guessGame = new GuessGame(answer);
+        GenerateAnswer generateAnswer = Mockito.mock(GenerateAnswer.class);
+        int[] answer = {1,2,3,4};
+        when(generateAnswer.generate()).thenReturn(answer);
+        GuessGame guessGame = new GuessGame(generateAnswer.generate());
 
         //when
         String result = guessGame.play(inputNumber);
@@ -64,9 +75,11 @@ public class GuessTest {
     @Test
     public void should_return_1A2B_when_guess_0324() {
         //given
-        int[] answer = {1,2,3,4};
         int[] inputNumber = {0,3,2,4};
-        GuessGame guessGame = new GuessGame(answer);
+        GenerateAnswer generateAnswer = Mockito.mock(GenerateAnswer.class);
+        int[] answer = {1,2,3,4};
+        when(generateAnswer.generate()).thenReturn(answer);
+        GuessGame guessGame = new GuessGame(generateAnswer.generate());
 
         //when
         String result = guessGame.play(inputNumber);
@@ -78,9 +91,11 @@ public class GuessTest {
     @Test
     public void should_return_0A4B_when_guess_4321() {
         //given
-        int[] answer = {1,2,3,4};
         int[] inputNumber = {4,3,2,1};
-        GuessGame guessGame = new GuessGame(answer);
+        GenerateAnswer generateAnswer = Mockito.mock(GenerateAnswer.class);
+        int[] answer = {1,2,3,4};
+        when(generateAnswer.generate()).thenReturn(answer);
+        GuessGame guessGame = new GuessGame(generateAnswer.generate());
 
         //when
         String result = guessGame.play(inputNumber);
