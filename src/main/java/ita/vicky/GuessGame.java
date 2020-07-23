@@ -1,5 +1,7 @@
 package ita.vicky;
 
+import java.util.HashSet;
+
 public class GuessGame {
 
     private int[] answer;
@@ -9,11 +11,26 @@ public class GuessGame {
     }
 
     public GuessGame() {
-
+        answer = new int[4];
     }
 
     public String play(int[] inputNumber) {
-        return getGameResult(inputNumber);
+        if (isValidInput(inputNumber)) {
+            return getGameResult(inputNumber);
+        }
+        return "Wrong Input，Input again";
+    }
+
+    private boolean isValidInput(int[] inputNumber) {
+        return isRepeatNum(inputNumber);
+    }
+
+    private boolean isRepeatNum(int[] inputNumber) {
+        HashSet<Integer> hashSet = new HashSet<Integer>();
+        for (int i = 0; i < inputNumber.length; i++) {
+            hashSet.add(inputNumber[i]);
+        }
+        return hashSet.size() == inputNumber.length;
     }
 
     private String getGameResult(int[] inputNumber) {

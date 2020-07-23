@@ -11,7 +11,7 @@ public class GuessTest {
     @Test
     void should_return_wrong_input_input_again_when_input_given_1123() {
         //given
-        int[] inputNumber = {1,2,3,4};
+        int[] inputNumber = {1,1,3,4};
         GuessGame guessGame = new GuessGame();
 
         //when
