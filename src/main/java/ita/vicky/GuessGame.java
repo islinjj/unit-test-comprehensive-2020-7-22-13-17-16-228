@@ -11,6 +11,10 @@ public class GuessGame {
     }
 
     public String play(int[] inputNumber) {
+        return getGameResult(inputNumber);
+    }
+
+    private String getGameResult(int[] inputNumber) {
         if (Arrays.equals(inputNumber,answer)){
             return "4A0B";
         } else {
