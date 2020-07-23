@@ -22,7 +22,7 @@ public class GuessGame {
     }
 
     private boolean isValidInput(int[] inputNumber) {
-        return isRepeatNum(inputNumber);
+        return inputNumber.length == 4 && isRepeatNum(inputNumber);
     }
 
     private boolean isRepeatNum(int[] inputNumber) {
