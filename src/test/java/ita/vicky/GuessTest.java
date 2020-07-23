@@ -74,4 +74,18 @@ public class GuessTest {
         //then
         Assertions.assertEquals("1A2B",result);
     }
+
+    @Test
+    public void should_return_0A4B_when_guess_4321() {
+        //given
+        int[] answer = {1,2,3,4};
+        int[] inputNumber = {4,3,2,1};
+        GuessGame guessGame = new GuessGame(answer);
+
+        //when
+        String result = guessGame.play(inputNumber);
+
+        //then
+        Assertions.assertEquals("0A4B",result);
+    }
 }
