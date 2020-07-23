@@ -30,11 +30,7 @@ public class GuessGame {
         for (int i = 0; i < inputNumber.length; i++) {
             hashSet.add(inputNumber[i]);
         }
-        if (hashSet.size() == inputNumber.length) {
-            return true;
-        } else {
-            return false;
-        }
+        return hashSet.size() == inputNumber.length;
     }
 
     private String getGameResult(int[] inputNumber) {
