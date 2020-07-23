@@ -16,7 +16,7 @@ public class GuessGame {
         int numA = 0;
         int numB = 0;
         String result = "";
-        int[] visited = new int[4];
+        int[] visited = new int[]{0,0,0,0};
 
         numA = getNumA(inputNumber, numA, visited);
         numB = getNumB(inputNumber, numB, visited);
@@ -29,7 +29,7 @@ public class GuessGame {
     private int getNumB(int[] inputNumber, int numB, int[] visited) {
         for (int i = 0; i < inputNumber.length; i++) {
             if (visited[i] != 1){
-                for (int j = i; j < answer.length; j++) {
+                for (int j = 0; j < answer.length; j++) {
                     if (inputNumber[i] == answer[j]){
                         numB++;
                     }

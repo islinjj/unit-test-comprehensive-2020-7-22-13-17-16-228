@@ -61,5 +61,17 @@ public class GuessTest {
         Assertions.assertEquals("0A2B",result);
     }
 
+    @Test
+    public void should_return_1A2B_when_guess_0324() {
+        //given
+        int[] answer = {1,2,3,4};
+        int[] inputNumber = {0,3,2,4};
+        GuessGame guessGame = new GuessGame(answer);
 
+        //when
+        String result = guessGame.play(inputNumber);
+
+        //then
+        Assertions.assertEquals("1A2B",result);
+    }
 }
