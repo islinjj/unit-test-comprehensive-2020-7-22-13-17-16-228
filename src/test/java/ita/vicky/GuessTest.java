@@ -22,6 +22,19 @@ public class GuessTest {
     }
 
     @Test
+    void should_return_wrong_input_input_again_when_input_given_12() {
+        //given
+        int[] inputNumber = {1,2};
+        GuessGame guessGame = new GuessGame();
+
+        //when
+        String result = guessGame.play(inputNumber);
+
+        //then
+        Assertions.assertEquals("Wrong Input，Input again",result);
+    }
+
+    @Test
     public void should_return_4A0B_when_guess_given_1234() {
         //given
         GenerateAnswer generateAnswer = Mockito.mock(GenerateAnswer.class);
