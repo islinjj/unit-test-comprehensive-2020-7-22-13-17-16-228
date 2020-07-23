@@ -8,6 +8,10 @@ public class GuessGame {
         this.answer = answer;
     }
 
+    public GuessGame() {
+
+    }
+
     public String play(int[] inputNumber) {
         return getGameResult(inputNumber);
     }
