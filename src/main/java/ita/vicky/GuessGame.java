@@ -1,5 +1,7 @@
 package ita.vicky;
 
+import java.util.Arrays;
+
 public class GuessGame {
 
     private int[] answer;
@@ -9,6 +11,9 @@ public class GuessGame {
     }
 
     public String play(int[] inputNumber) {
-        return "4A0B";
+        if (Arrays.equals(inputNumber,answer)){
+            return "4A0B";
+        }
+        return null;
     }
 }
