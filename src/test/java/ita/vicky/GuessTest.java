@@ -48,7 +48,7 @@ public class GuessTest {
     }
 
     @Test
-    void should_return_0A2B_when_guess_given_2478() {
+    public void should_return_0A2B_when_guess_given_2478() {
         //given
         int[] answer = {1,2,3,4};
         int[] inputNumber = {2,4,7,8};
