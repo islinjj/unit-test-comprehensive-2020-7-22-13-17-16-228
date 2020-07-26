@@ -4,6 +4,6 @@ import java.util.Arrays;
 
 public class GuessNumberValidator {
     public boolean isValid(int[] inputNumber) {
-        return inputNumber.length == 4 && Arrays.stream(inputNumber).noneMatch(input -> Arrays.stream(inputNumber).noneMatch(i -> i == input));
+        return inputNumber.length == 4 && Arrays.stream(inputNumber).noneMatch(input -> Arrays.stream(inputNumber).noneMatch(i -> i == input)) && !String.valueOf(inputNumber).matches(".*^[\\d]+.*");
     }
 }
