@@ -12,7 +12,7 @@ public class NumberValidator {
         return number.length == 4;
     }
 
-    private boolean isNotRepeatNumber(int[] number) {
+    public boolean isNotRepeatNumber(int[] number) {
         return (int)Arrays.stream(number).distinct().count() == number.length;
     }
 }
