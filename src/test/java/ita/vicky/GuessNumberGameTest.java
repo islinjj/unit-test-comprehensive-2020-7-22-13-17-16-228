@@ -80,4 +80,16 @@ public class GuessNumberGameTest {
         //then
         assertEquals("0A2B",guessResult);
     }
+
+    @Test
+    void should_return_1A2B_when_guess_given_0324() {
+        //given
+        int[] inputNumber = {0,3,2,4};
+
+        //when
+        String guessResult = guessNumberGame.guess(inputNumber);
+
+        //then
+        assertEquals("1A2B",guessResult);
+    }
 }
