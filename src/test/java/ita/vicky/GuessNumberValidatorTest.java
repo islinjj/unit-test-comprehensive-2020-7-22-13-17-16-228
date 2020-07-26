@@ -46,4 +46,17 @@ public class GuessNumberValidatorTest {
         //then
         assertFalse(isGuessNumberValid);
     }
+
+    @Test
+    void should_return_false_when_validate_given_vr34() {
+        //given
+        int[] inputNumber = {'v','r',3,4};
+        GuessNumberValidator guessNumberValidator = new GuessNumberValidator();
+
+        //when
+        boolean isGuessNumberValid = guessNumberValidator.isValid(inputNumber);
+
+        //then
+        assertFalse(isGuessNumberValid);
+    }
 }
