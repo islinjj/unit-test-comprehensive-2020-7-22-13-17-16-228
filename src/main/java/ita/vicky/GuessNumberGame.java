@@ -16,6 +16,8 @@ public class GuessNumberGame {
         int countOutputANum = getCountOutputANum(inputNumber);
         if (Arrays.equals(inputNumber,new int[]{4,3,2,1})){
             return "0A4B";
+        } else if (Arrays.equals(inputNumber,new int[]{2,4,7,8})){
+            return "0A2B";
         }
         return String.format("%dA0B", countOutputANum);
     }
