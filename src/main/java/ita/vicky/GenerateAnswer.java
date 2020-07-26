@@ -1,10 +1,9 @@
 package ita.vicky;
 
 import java.util.HashSet;
-import java.util.Random;
 import java.util.Set;
 
-public class GenerateAnswer {
+public class GenerateAnswer{
 
     public int[] generate() {
         Set<Integer> repeatNum = new HashSet<>();
