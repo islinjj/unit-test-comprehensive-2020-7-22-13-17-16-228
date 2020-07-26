@@ -1,7 +1,7 @@
 package ita.vicky;
 
 public class GenerateAnswer {
-    public Object generate() {
+    public String generate() {
         return null;
     }
 }

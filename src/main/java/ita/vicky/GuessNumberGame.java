@@ -1,18 +1,23 @@
 package ita.vicky;
 
-public class GuessNumberGame {
-    private GenerateAnswer generateAnswer;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
-    public GuessNumberGame(GenerateAnswer generateAnswer) {
-        this.generateAnswer = generateAnswer;
+public class GuessNumberGame {
+    private String answer;
+
+    public GuessNumberGame(String answer) {
+        this.answer = answer;
     }
 
     public String guess(String inputNumber) {
-        if (inputNumber.equals("5678")){
-            return "0A0B";
-        } else if(inputNumber.equals("1234")){
-            return "4A0B";
-        }
-        return "1A0B";
+        int countOutputANum = getCountOutputANum(inputNumber);
+        return String.format("%dA0B", countOutputANum);
+    }
+
+    private int getCountOutputANum(String inputNumber) {
+        return IntStream.range(0,inputNumber.split("").length).
+                mapToObj(i -> Integer.valueOf(inputNumber.split("")[i]) == Integer.valueOf(answer.split("")[i]))
+                .filter(isInputEqualsAnswer -> isInputEqualsAnswer == true).collect(Collectors.toList()).size();
     }
 }
