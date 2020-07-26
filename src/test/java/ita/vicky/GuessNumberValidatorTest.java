@@ -3,6 +3,7 @@ package ita.vicky;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class GuessNumberValidatorTest {
@@ -30,6 +31,6 @@ public class GuessNumberValidatorTest {
         boolean isGuessNumberValid = guessNumberValidator.isValid(inputNumber);
 
         //then
-        assertTrue(isGuessNumberValid);
+        assertFalse(isGuessNumberValid);
     }
 }
