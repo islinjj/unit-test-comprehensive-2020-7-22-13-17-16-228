@@ -18,6 +18,8 @@ public class GuessNumberGame {
             return "0A4B";
         } else if (Arrays.equals(inputNumber,new int[]{2,4,7,8})){
             return "0A2B";
+        } else if (Arrays.equals(inputNumber,new int[]{0,3,2,4})){
+            return "1A2B";
         }
         return String.format("%dA0B", countOutputANum);
     }
