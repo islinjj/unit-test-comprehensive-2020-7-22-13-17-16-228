@@ -16,7 +16,7 @@ public class GuessNumberGameTest {
     static void mockAnswer(){
         generateAnswer = Mockito.mock(GenerateAnswer.class);
         when(generateAnswer.generate()).thenReturn("1234");
-        guessNumberGame = new GuessNumberGame(generateAnswer);
+        guessNumberGame = new GuessNumberGame(generateAnswer.generate());
     }
 
     @Test
