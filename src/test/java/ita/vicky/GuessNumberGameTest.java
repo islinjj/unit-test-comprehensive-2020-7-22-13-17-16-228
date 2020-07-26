@@ -42,4 +42,16 @@ public class GuessNumberGameTest {
         //then
         assertEquals("1A0B",guessResult);
     }
+
+    @Test
+    void should_return_4A0B_when_guess_given_1234() {
+        //given
+        String inputNumber = "1234";
+
+        //when
+        String guessResult = guessNumberGame.guess(inputNumber);
+
+        //then
+        assertEquals("4A0B",guessResult);
+    }
 }
