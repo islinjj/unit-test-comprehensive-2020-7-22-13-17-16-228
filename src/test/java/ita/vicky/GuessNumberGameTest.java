@@ -56,6 +56,7 @@ public class GuessNumberGameTest {
         assertEquals("4A0B",guessResult);
     }
 
+
     @Test
     void should_return_0A4B_when_guess_given_4321() {
         //given
@@ -66,5 +67,17 @@ public class GuessNumberGameTest {
 
         //then
         assertEquals("0A4B",guessResult);
+    }
+
+    @Test
+    void should_return_0A2B_when_guess_given_2478() {
+        //given
+        int[] inputNumber = {2,4,7,8};
+
+        //when
+        String guessResult = guessNumberGame.guess(inputNumber);
+
+        //then
+        assertEquals("0A2B",guessResult);
     }
 }
