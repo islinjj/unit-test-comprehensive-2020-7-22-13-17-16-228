@@ -33,4 +33,6 @@ public class GuessNumberValidatorTest {
         //then
         assertFalse(isGuessNumberValid);
     }
+
+
 }
