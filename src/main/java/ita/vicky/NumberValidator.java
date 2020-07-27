@@ -2,7 +2,7 @@ package ita.vicky;
 
 import java.util.Arrays;
 
-import static ita.vicky.Number.NUMBER_LIMIT_LENGTH;
+import static ita.vicky.normal.Number.NUMBER_LIMIT_LENGTH;
 
 public class NumberValidator {
     public boolean isValid(int[] number) {

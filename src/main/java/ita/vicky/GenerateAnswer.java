@@ -3,7 +3,7 @@ package ita.vicky;
 import java.util.ArrayList;
 import java.util.List;
 
-import static ita.vicky.Number.NUMBER_LIMIT_LENGTH;
+import static ita.vicky.normal.Number.NUMBER_LIMIT_LENGTH;
 
 public class GenerateAnswer{
 

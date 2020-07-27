@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-import static ita.vicky.Number.NUMBER_LIMIT_LENGTH;
+import static ita.vicky.normal.Number.NUMBER_LIMIT_LENGTH;
 
 public class GuessNumberGame {
     private int[] answer;
