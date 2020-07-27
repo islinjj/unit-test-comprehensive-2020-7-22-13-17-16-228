@@ -21,7 +21,7 @@ public class GuessNumberGameTest {
     }
 
     @Test
-    void should_return_0A0B_when_guess_given_5678() {
+    void should_return_0A0B_when_guess_given_input_5678() {
         //given
         int[] inputNumber = {5,6,7,8};
 
@@ -33,7 +33,7 @@ public class GuessNumberGameTest {
     }
 
     @Test
-    void should_return_1A0B_when_guess_given_1567() {
+    void should_return_1A0B_when_guess_given_input_1567() {
         //given
         int[] inputNumber = {1,5,6,7};
 
@@ -45,7 +45,7 @@ public class GuessNumberGameTest {
     }
 
     @Test
-    void should_return_4A0B_when_guess_given_1234() {
+    void should_return_4A0B_when_guess_given_input_1234() {
         //given
         int[] inputNumber = {1,2,3,4};
 
@@ -58,7 +58,7 @@ public class GuessNumberGameTest {
 
 
     @Test
-    void should_return_0A4B_when_guess_given_4321() {
+    void should_return_0A4B_when_guess_given_input_4321() {
         //given
         int[] inputNumber = {4,3,2,1};
 
@@ -70,7 +70,7 @@ public class GuessNumberGameTest {
     }
 
     @Test
-    void should_return_0A2B_when_guess_given_2478() {
+    void should_return_0A2B_when_guess_given_input_2478() {
         //given
         int[] inputNumber = {2,4,7,8};
 
@@ -82,7 +82,7 @@ public class GuessNumberGameTest {
     }
 
     @Test
-    void should_return_1A2B_when_guess_given_0324() {
+    void should_return_1A2B_when_guess_given_input_0324() {
         //given
         int[] inputNumber = {0,3,2,4};
 
