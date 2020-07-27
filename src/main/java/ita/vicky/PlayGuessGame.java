@@ -1,5 +1,7 @@
 package ita.vicky;
 
+import static ita.vicky.normal.Message.END_GAME;
+import static ita.vicky.normal.Message.WRONG_INPUT;
 import static ita.vicky.normal.Number.*;
 
 public class PlayGuessGame {
