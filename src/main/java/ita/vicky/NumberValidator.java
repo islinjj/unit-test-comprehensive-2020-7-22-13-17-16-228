@@ -14,6 +14,6 @@ public class NumberValidator {
     }
 
     public boolean isNotRepeatNumber(int[] number) {
-        return (int)Arrays.stream(number).distinct().count() == NUMBER_LIMIT_LENGTH;
+        return (int)Arrays.stream(number).distinct().count() == number.length;
     }
 }
