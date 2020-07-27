@@ -89,7 +89,7 @@ public class PlayGuessGameTest {
         playGuessGame.play(new int[]{1,2,5,6},generateAnswer.generate());
 
         //then
-        assertTrue(systemOut().contains("End Game"));
+        assertTrue(systemOut().contains("end game"));
     }
 
 }
