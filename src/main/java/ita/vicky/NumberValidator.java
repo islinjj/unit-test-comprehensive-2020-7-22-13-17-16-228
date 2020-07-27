@@ -1,7 +1,8 @@
 package ita.vicky;
 
 import java.util.Arrays;
-import java.util.stream.Collectors;
+
+import static ita.vicky.Number.NUMBER_LIMIT_LENGTH;
 
 public class NumberValidator {
     public boolean isValid(int[] number) {
@@ -9,7 +10,7 @@ public class NumberValidator {
     }
 
     private boolean isValidLength(int[] number) {
-        return number.length == 4;
+        return number.length == NUMBER_LIMIT_LENGTH;
     }
 
     public boolean isNotRepeatNumber(int[] number) {
