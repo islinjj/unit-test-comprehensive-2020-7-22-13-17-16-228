@@ -5,9 +5,10 @@ import java.util.List;
 public class PlayGuessGame {
     private GuessNumberGame guessNumberGame;
     private NumberValidator numberValidator;
-    private int countPlayTimes = 0;
+    private int countPlayTimes;
 
     public PlayGuessGame() {
+        countPlayTimes = 0;
         numberValidator = new NumberValidator();
     }
 
