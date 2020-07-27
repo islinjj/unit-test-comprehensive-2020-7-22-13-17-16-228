@@ -1,7 +1,5 @@
 package ita.vicky;
 
-import java.util.List;
-
 public class PlayGuessGame {
     private GuessNumberGame guessNumberGame;
     private NumberValidator numberValidator;
