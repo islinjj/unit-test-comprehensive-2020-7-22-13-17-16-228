@@ -53,4 +53,22 @@ public class PlayGuessGameTest {
         //then
         assertEquals("0A4B\n4A0B\n", systemOut());
     }
+
+    @Test
+    void should_win_when_play_given_1123_and_1234_input_number_and_answer_is_1234() {
+        //given
+        int[] inputNumberOne = {1, 1, 2, 3};
+        int[] inputNumberTwo = {1, 2, 3, 4};
+        List<int[]> inputNumberList = new ArrayList<>();
+        inputNumberList.add(inputNumberOne);
+        inputNumberList.add(inputNumberTwo);
+
+        //when
+        for (int[] inputNumber : inputNumberList) {
+            playGuessGame.play(inputNumber,generateAnswer.generate());
+        }
+
+        //then
+        assertEquals("wrong input, input again\n4A0B\n", systemOut());
+    }
 }
