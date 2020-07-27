@@ -11,10 +11,18 @@ public class GenerateAnswer{
         List<Integer> answer = new ArrayList<>();
         while (answer.size() < NUMBER_LIMIT_LENGTH) {
             int ans = (int) (Math.random() * 10);
-            if (!answer.stream().anyMatch(num -> num == ans)) {
+            if (!isRepeatNumber(answer, ans)) {
                 answer.add(ans);
             }
         }
+        return getAnswer(answer);
+    }
+
+    private boolean isRepeatNumber(List<Integer> answer, int ans) {
+        return answer.stream().anyMatch(num -> num == ans);
+    }
+
+    private int[] getAnswer(List<Integer> answer) {
         return answer.stream().mapToInt(Integer::valueOf).toArray();
     }
 }
