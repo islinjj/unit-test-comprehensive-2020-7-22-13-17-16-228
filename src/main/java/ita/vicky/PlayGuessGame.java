@@ -1,5 +1,7 @@
 package ita.vicky;
 
+import static ita.vicky.normal.Number.*;
+
 public class PlayGuessGame {
     private GuessNumberGame guessNumberGame;
     private NumberValidator numberValidator;
@@ -12,20 +14,23 @@ public class PlayGuessGame {
 
     public void play(int[] inputNumber, int[] answer) {
         guessNumberGame = new GuessNumberGame(answer);
-        if (countPlayTimes++ < 6) {
-            if (numberValidator.isValid(inputNumber)) {
-                String guessGameResult = "";
-                guessGameResult = guessNumberGame.guess(inputNumber);
-                System.out.printf("%s\n", guessGameResult);
-            } else {
-                System.out.printf("wrong input, input again\n");
-            }
+        if (countPlayTimes++ < ALLOWED_PLAY_TIMES) {
+            System.out.print(startGuess(inputNumber));
         } else {
             endGame();
         }
     }
 
+    private String startGuess(int[] inputNumber) {
+        return numberValidator.isValid(inputNumber) ? keepGuess(inputNumber) : WRONG_INPUT;
+    }
+
+    private String keepGuess(int[] inputNumber) {
+        String guessGameResult = guessNumberGame.guess(inputNumber);
+        return String.format("%s\n", guessGameResult);
+    }
+
     public void endGame() {
-        System.out.print("End Game");
+        System.out.print(END_GAME);
     }
 }
