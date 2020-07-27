@@ -23,7 +23,6 @@ public class PlayGuessGameTest {
 
     @BeforeAll
     static void mockAnswer() {
-        playGuessGame = new PlayGuessGame();
         generateInputNumber = new InputNumberGenerate();
         generateAnswer = Mockito.mock(GenerateAnswer.class);
         when(generateAnswer.generate()).thenReturn(new int[]{1, 2, 3, 4});
@@ -48,6 +47,7 @@ public class PlayGuessGameTest {
         List<int[]> inputNumberList = new ArrayList<>();
         inputNumberList.add(inputNumberOne);
         inputNumberList.add(inputNumberTwo);
+        playGuessGame = new PlayGuessGame();
 
         //when
         for (int[] inputNumber : inputNumberList) {
@@ -66,6 +66,7 @@ public class PlayGuessGameTest {
         List<int[]> inputNumberList = new ArrayList<>();
         inputNumberList.add(inputNumberOne);
         inputNumberList.add(inputNumberTwo);
+        playGuessGame = new PlayGuessGame();
 
         //when
         for (int[] inputNumber : inputNumberList) {
@@ -79,6 +80,7 @@ public class PlayGuessGameTest {
     @Test
     void should_end_game_when_play_7_times_given_6_valid_input_number_and_answer_is_1234() {
         //given
+        playGuessGame = new PlayGuessGame();
         for (int times = 0; times < 6; times++) {
             playGuessGame.play(generateInputNumber.generate(),generateAnswer.generate());
         }
@@ -89,4 +91,5 @@ public class PlayGuessGameTest {
         //then
         assertTrue(systemOut().contains("End Game"));
     }
+
 }
