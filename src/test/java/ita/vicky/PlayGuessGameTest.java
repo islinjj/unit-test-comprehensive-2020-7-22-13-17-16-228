@@ -3,6 +3,7 @@ package ita.vicky;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
 import org.mockito.Mockito;
 
 import java.io.ByteArrayOutputStream;
@@ -11,16 +12,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.when;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.Mockito.*;
 
 public class PlayGuessGameTest {
 
-    private static GenerateAnswer generateAnswer;
     private static PlayGuessGame playGuessGame;
+    private static GenerateAnswer generateAnswer;
+    private static InputNumberGenerate generateInputNumber;
 
     @BeforeAll
     static void mockAnswer() {
         playGuessGame = new PlayGuessGame();
+        generateInputNumber = new InputNumberGenerate();
         generateAnswer = Mockito.mock(GenerateAnswer.class);
         when(generateAnswer.generate()).thenReturn(new int[]{1, 2, 3, 4});
     }
@@ -70,5 +74,19 @@ public class PlayGuessGameTest {
 
         //then
         assertEquals("wrong input, input again\n4A0B\n", systemOut());
+    }
+
+    @Test
+    void should_end_game_when_play_7_times_given_6_valid_input_number_and_answer_is_1234() {
+        //given
+        for (int times = 0; times < 6; times++) {
+            playGuessGame.play(generateInputNumber.generate(),generateAnswer.generate());
+        }
+
+        //when
+        playGuessGame.play(new int[]{1,2,5,6},generateAnswer.generate());
+
+        //then
+        assertTrue(systemOut().contains("End Game"));
     }
 }
