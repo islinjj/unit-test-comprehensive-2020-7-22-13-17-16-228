@@ -5,17 +5,16 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.ArgumentMatchers.intThat;
 import static org.mockito.Mockito.when;
 
 public class GuessNumberGameTest {
 
     private static GuessNumberGame guessNumberGame;
-    private static GenerateAnswer generateAnswer;
+    private static AnswerGenerator generateAnswer;
 
     @BeforeAll
     static void mockAnswer(){
-        generateAnswer = Mockito.mock(GenerateAnswer.class);
+        generateAnswer = Mockito.mock(AnswerGenerator.class);
         when(generateAnswer.generate()).thenReturn(new int[]{1, 2, 3, 4});
         guessNumberGame = new GuessNumberGame(generateAnswer.generate());
     }

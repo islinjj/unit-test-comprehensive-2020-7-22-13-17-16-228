@@ -5,7 +5,7 @@ import java.util.List;
 
 import static ita.vicky.normal.Number.NUMBER_LIMIT_LENGTH;
 
-public class GenerateAnswer{
+public class AnswerGenerator {
 
     public int[] generate() {
         List<Integer> answer = new ArrayList<>();
