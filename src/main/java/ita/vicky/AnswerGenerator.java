@@ -4,13 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static ita.vicky.normal.Number.NUMBER_LIMIT_LENGTH;
+import static ita.vicky.normal.Number.RANDOM_NUMBER_BOUND;
 
 public class AnswerGenerator {
 
     public int[] generate() {
         List<Integer> answer = new ArrayList<>();
         while (answer.size() < NUMBER_LIMIT_LENGTH) {
-            int ans = (int) (Math.random() * 10);
+            int ans = (int) (Math.random() * RANDOM_NUMBER_BOUND);
             if (!isRepeatNumber(answer, ans)) {
                 answer.add(ans);
             }
