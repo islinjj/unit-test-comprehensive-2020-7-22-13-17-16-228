@@ -3,7 +3,6 @@ package ita.vicky;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 
 import java.io.ByteArrayOutputStream;
@@ -18,13 +17,13 @@ import static org.mockito.Mockito.*;
 public class PlayGuessGameTest {
 
     private static PlayGuessGame playGuessGame;
-    private static GenerateAnswer generateAnswer;
+    private static AnswerGenerator generateAnswer;
     private static InputNumberGenerate generateInputNumber;
 
     @BeforeAll
     static void mockAnswer() {
         generateInputNumber = new InputNumberGenerate();
-        generateAnswer = Mockito.mock(GenerateAnswer.class);
+        generateAnswer = Mockito.mock(AnswerGenerator.class);
         when(generateAnswer.generate()).thenReturn(new int[]{1, 2, 3, 4});
     }
 

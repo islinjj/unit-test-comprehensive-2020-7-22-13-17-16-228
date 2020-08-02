@@ -1,7 +1,6 @@
 package ita.vicky;
 
 import java.util.Arrays;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 import static ita.vicky.normal.Number.NUMBER_LIMIT_LENGTH;
@@ -14,12 +13,12 @@ public class GuessNumberGame {
     }
 
     public String guess(int[] inputNumber) {
-        int countOutputANum = getCountOutputANum(inputNumber);
-        int countOutputBNum = getCountOutputBNum(inputNumber, countOutputANum);
-        return String.format("%dA%dB", countOutputANum,countOutputBNum);
+        int countAllCorrectPositionNumber = getAllCorrectPositionNumber(inputNumber);
+        int countCorrectNumber = getCorrectNumber(inputNumber, countAllCorrectPositionNumber);
+        return String.format("%dA%dB", countAllCorrectPositionNumber,countCorrectNumber);
     }
 
-    private int getCountOutputBNum(int[] inputNumber, int countOutputANum) {
+    private int getCorrectNumber(int[] inputNumber, int countOutputANum) {
         return getInputNumberEqualsAnswerIgnorePosition(inputNumber) - countOutputANum;
     }
 
@@ -30,11 +29,10 @@ public class GuessNumberGame {
                 .count();
     }
 
-    private int getCountOutputANum(int[] inputNumber) {
-        return IntStream
-                .range(0,NUMBER_LIMIT_LENGTH)
+    private int getAllCorrectPositionNumber(int[] inputNumber) {
+        return (int) IntStream
+                .range(0, NUMBER_LIMIT_LENGTH)
                 .mapToObj(index -> inputNumber[index] == answer[index])
-                .filter(isInputNumberEqualsAnswer -> isInputNumberEqualsAnswer == true)
-                .collect(Collectors.toList()).size();
+                .filter(isInputNumberEqualsAnswer -> isInputNumberEqualsAnswer).count();
     }
 }
