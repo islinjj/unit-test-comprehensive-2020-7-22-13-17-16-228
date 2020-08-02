@@ -3,12 +3,15 @@ package ita.vicky;
 import java.util.HashSet;
 import java.util.Set;
 
+import static ita.vicky.normal.Number.NUMBER_LIMIT_LENGTH;
+import static ita.vicky.normal.Number.RANDOM_LIMIT;
+
 public class InputNumberGenerate {
     public int[] generate() {
         Set<Integer> repeatNum = new HashSet<>();
         StringBuilder answerString = new StringBuilder();
-        while (answerString.length() < 4) {
-            Integer ans = (int) (Math.random() * 10);
+        while (answerString.length() < NUMBER_LIMIT_LENGTH) {
+            Integer ans = (int) (Math.random() * RANDOM_LIMIT);
             if (!repeatNum.contains(ans)) {
                 answerString.append(ans);
             }
