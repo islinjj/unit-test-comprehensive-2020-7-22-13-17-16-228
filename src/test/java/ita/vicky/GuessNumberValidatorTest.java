@@ -45,4 +45,17 @@ public class GuessNumberValidatorTest {
         //then
         assertFalse(isGuessNumberValid);
     }
+
+    @Test
+    void should_return_false_when_validate_given_input_11123() {
+        //given
+        int[] inputNumber = {11,1,2,3};
+        NumberValidator guessNumberValidator = new NumberValidator();
+
+        //when
+        boolean isGuessNumberValid = guessNumberValidator.isValid(inputNumber);
+
+        //then
+        assertFalse(isGuessNumberValid);
+    }
 }
