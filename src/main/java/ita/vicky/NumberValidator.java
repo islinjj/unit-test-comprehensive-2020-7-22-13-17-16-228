@@ -18,6 +18,6 @@ public class NumberValidator {
     }
 
     public boolean isNumberRange0To9(int[] number) {
-        return Arrays.stream(number).allMatch(item -> item > NUMBER_MIN_VALUE && item < NUMBER_MAX_VALUE);
+        return Arrays.stream(number).allMatch(item -> item >= NUMBER_MIN_VALUE && item < NUMBER_MAX_VALUE);
     }
 }
