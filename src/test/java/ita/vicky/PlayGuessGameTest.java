@@ -17,13 +17,13 @@ import static org.mockito.Mockito.*;
 public class PlayGuessGameTest {
 
     private static PlayGuessGame playGuessGame;
-    private static AnswerGenerator generateAnswer;
+    private static GenerateAnswer generateAnswer;
     private static InputNumberGenerate generateInputNumber;
 
     @BeforeAll
     static void mockAnswer() {
         generateInputNumber = new InputNumberGenerate();
-        generateAnswer = Mockito.mock(AnswerGenerator.class);
+        generateAnswer = Mockito.mock(GenerateAnswer.class);
         when(generateAnswer.generate()).thenReturn(new int[]{1, 2, 3, 4});
     }
 

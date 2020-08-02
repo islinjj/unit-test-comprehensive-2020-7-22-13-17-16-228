@@ -10,11 +10,11 @@ import static org.mockito.Mockito.when;
 public class GuessNumberGameTest {
 
     private static GuessNumberGame guessNumberGame;
-    private static AnswerGenerator generateAnswer;
+    private static GenerateAnswer generateAnswer;
 
     @BeforeAll
     static void mockAnswer(){
-        generateAnswer = Mockito.mock(AnswerGenerator.class);
+        generateAnswer = Mockito.mock(GenerateAnswer.class);
         when(generateAnswer.generate()).thenReturn(new int[]{1, 2, 3, 4});
         guessNumberGame = new GuessNumberGame(generateAnswer.generate());
     }

@@ -6,8 +6,7 @@ import java.util.List;
 import static ita.vicky.normal.Number.NUMBER_LIMIT_LENGTH;
 import static ita.vicky.normal.Number.RANDOM_LIMIT;
 
-public class GenerateAnswer{
-
+public class GenerateAnswer {
     public int[] generate() {
         List<Integer> answer = new ArrayList<>();
         while (answer.size() < NUMBER_LIMIT_LENGTH) {
