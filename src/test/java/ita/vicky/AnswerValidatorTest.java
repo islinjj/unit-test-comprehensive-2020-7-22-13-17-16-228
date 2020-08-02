@@ -9,7 +9,7 @@ public class AnswerValidatorTest {
     void should_return_true_when_validate_given_random_answer() {
         //given
         GenerateAnswer generateAnswer = new GenerateAnswer();
-        AnswerValidator answerValidator = new AnswerValidator();
+        NumberValidator answerValidator = new NumberValidator();
         int[] answer = generateAnswer.generate();
 
         //when
