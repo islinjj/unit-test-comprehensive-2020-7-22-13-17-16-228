@@ -7,4 +7,8 @@ public class Number {
 
     public static final int RANDOM_LIMIT = 10;
 
+    public static final int NUMBER_MIN_VALUE = 0;
+
+    public static final int NUMBER_MAX_VALUE = 10;
+
 }

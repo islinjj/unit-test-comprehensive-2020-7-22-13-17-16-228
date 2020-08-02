@@ -2,7 +2,7 @@ package ita.vicky;
 
 import java.util.Arrays;
 
-import static ita.vicky.normal.Number.NUMBER_LIMIT_LENGTH;
+import static ita.vicky.normal.Number.*;
 
 public class NumberValidator {
     public boolean isValid(int[] number) {
@@ -18,6 +18,6 @@ public class NumberValidator {
     }
 
     public boolean isNumberRange0To9(int[] number) {
-        return Arrays.stream(number).allMatch(item -> item > 0 && item < 10);
+        return Arrays.stream(number).allMatch(item -> item > NUMBER_MIN_VALUE && item < NUMBER_MAX_VALUE);
     }
 }
