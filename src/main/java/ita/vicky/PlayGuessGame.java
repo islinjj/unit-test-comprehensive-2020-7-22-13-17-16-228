@@ -17,14 +17,10 @@ public class PlayGuessGame {
     public void play(int[] inputNumber, int[] answer) {
         guessNumberGame = new GuessNumberGame(answer);
         if (countPlayTimes++ < ALLOWED_PLAY_TIMES) {
-            System.out.print(startGuess(inputNumber));
+            System.out.print(numberValidator.isValid(inputNumber) ? keepGuess(inputNumber) : WRONG_INPUT);
         } else {
             endGame();
         }
-    }
-
-    private String startGuess(int[] inputNumber) {
-        return numberValidator.isValid(inputNumber) ? keepGuess(inputNumber) : WRONG_INPUT;
     }
 
     private String keepGuess(int[] inputNumber) {
