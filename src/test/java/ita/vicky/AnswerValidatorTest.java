@@ -8,8 +8,8 @@ public class AnswerValidatorTest {
     @Test
     void should_return_true_when_validate_given_random_answer() {
         //given
-        AnswerGenerator generateAnswer = new AnswerGenerator();
-        AnswerValidator answerValidator = new AnswerValidator();
+        GenerateAnswer generateAnswer = new GenerateAnswer();
+        NumberValidator answerValidator = new NumberValidator();
         int[] answer = generateAnswer.generate();
 
         //when
